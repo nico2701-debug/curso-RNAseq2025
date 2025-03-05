@@ -1,0 +1,10 @@
+##Genes diferenciales apartir de una secuenciación de Arabidopsis thaliana y enriquecimiento de datos 
+#apartir de los datos cargados se pueden empezar a escribir los siguientes comandos en la consola de R 
+deTab = topTags(diff_exp, n=Inf)$table
+deTab[c(1,109),]
+#seguidamnete se indica el valor de FC adecuado 
+row.names(deTab)[deTab$logFC > 5]
+#se puede observar el valor de genes diferenciales en la secuenciación con el comando: 
+print(paste("total de diferenciales:", length(deGenes)))
+#los datos se guardan en la carpeta selccionada 
+outpath = ("/home/alumno13/Curso_RNAseq/resultadosdif/")
